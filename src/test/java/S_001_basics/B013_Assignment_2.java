@@ -38,7 +38,7 @@ public class B013_Assignment_2 {
 		 //4. get windows'id for each browser
 		 //5. close specific browser window
 		  
-		//Windows Handles
+		
 
 		 ChromeDriver driver = new ChromeDriver() ;
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -48,9 +48,10 @@ public class B013_Assignment_2 {
 		 driver.findElement(By.xpath("//input[@class=\"wikipedia-search-input\"]")).sendKeys("Stocks");
 		 
 		 //2. count number of links
-		 List<WebElement> ele = driver.findElements(By.xpath("//*[contains(@href,'http')]"));
+		 List<WebElement> ele = driver.findElements(By.xpath("//*[contains(@href,'http')]"));  //more generalized //a[@href]
+		 List<WebElement> ele2 = driver.findElements(By.xpath("//*[starts-with(@href,'http')]"));
 		 
-		 System.out.println("Total links are :- " +ele.size());
+		 System.out.println("Total links are :- " +ele2.size());
 		 
 		 //3. click on each link using for loop
 //		

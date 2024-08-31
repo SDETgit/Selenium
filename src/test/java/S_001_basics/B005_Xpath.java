@@ -26,9 +26,9 @@ public class B005_Xpath {
                                       
 
             //Xpath with mutiple attributes
-//driver.findElement(By.xpath("//a[@onclick=\"byCat('notebook')\"][@class=\"list-group-item\"]")).click();
+driver.findElement(By.xpath("//a[@onclick=\"byCat('notebook')\"][@class=\"list-group-item\"]")).click();
            //Xpath with and
-//driver.findElement(By.xpath("//a[@onclick=\"byCat('monitor')\" and @class=\"list-group-item\"]")).click();  //Here both classes must match
+driver.findElement(By.xpath("//a[@onclick=\"byCat('monitor')\" and @class=\"list-group-item\"]")).click();  //Here both classes must match
            //xapth with or
 //driver.findElement(By.xpath("//a[@onclick=\"byCat('monitor')\" or @class=\"list-group-1item\"]")).click(); //in or condition added 1 at list-group-1item so that it do not match multiple web elements with class name as list-group-item
            //xpath with inner text
