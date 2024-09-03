@@ -1,0 +1,64 @@
+package S_001_basics;
+
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Set;
+import java.util.function.Function;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class B020_bootstrap_dropdown {
+	//https://www.demoblaze.com/
+	//https://artoftesting.com/samplesiteforselenium
+	//https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+	//https://testautomationpractice.blogspot.com/
+	//https://the-internet.herokuapp.com/
+	//https://ui.vision/demo/webtest/frames/
+	//https://www.jquery-az.com/boots/demo.php?ex=63.0_2
+	public static void main(String[] args) throws InterruptedException {
+		
+		 ChromeDriver driver = new ChromeDriver() ;
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		 driver.navigate().to("https://www.jquery-az.com/boots/demo.php?ex=63.0_2");
+		 driver.manage().window().maximize();
+		 
+		WebElement dropdown = driver.findElement(By.xpath("//button[@data-toggle=\"dropdown\"]"));
+		dropdown.click();
+		
+		//select single element from bootstrap dropdown 
+	//	driver.findElement(By.xpath("//input[@value=\"Java\"]")).click();
+		
+		//select all elements from bootstrap dropdown 
+		List<WebElement> bs = driver.findElements(By.xpath("//*[@class=\"checkbox\"]"));
+		
+		//select All options 
+		System.out.println(bs.size());
+		/*
+		 * Thread.sleep(1000); for(WebElement s : bs) { if(!s.isSelected()) {
+		 * s.click();} } Thread.sleep(10000);
+		 */
+		//Select particular options 
+		for(WebElement s : bs)
+		{
+			if(s.getText()=="Java"||s.getText()=="C#"||s.getText()=="Oracle") {
+			s.click();}
+		}
+		
+	}}																					

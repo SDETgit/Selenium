@@ -23,7 +23,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class B019_dropdowns {
+public class B019_Select_dropdowns {
 	//https://www.demoblaze.com/
 	//https://artoftesting.com/samplesiteforselenium
 	//https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
