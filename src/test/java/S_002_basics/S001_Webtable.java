@@ -14,6 +14,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -37,38 +38,47 @@ public class S001_Webtable {
 		
 
 		 ChromeDriver driver = new ChromeDriver() ;
-		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		 driver.navigate().to("https://the-internet.herokuapp.com/javascript_alerts");
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		 driver.navigate().to("https://testautomationpractice.blogspot.com/");
 		 
-		//1.Normal ok Alert
-		 driver.findElement(By.xpath("//button[@onclick=\"jsAlert()\"]")).click();
-		// driver.switchTo().alert().accept();
-		// driver.switchTo().alert().dismiss();
-		 //to get text of alert 
-		 Alert ale = driver.switchTo().alert();
-		 System.out.println(ale.getText());
-		 ale.accept();
-		 
-		 //2 Confirmational alert 
-		 driver.findElement(By.xpath("//*[@onclick=\"jsConfirm()\"]")).click();
-			// driver.switchTo().alert().accept();
-			// driver.switchTo().alert().dismiss();
-			 //to get text of alert 
-			 Alert ale2 = driver.switchTo().alert();
-			 System.out.println(ale.getText());
-			// ale.accept(); //accept using accept button 
-			 ale.dismiss();  //Close using cancel button 
-			String text =  driver.findElement(By.xpath("//*[@id=\"result\"]")).getText();
-			System.out.println(text);  //result text that generated on clicking accept/cancel 
-			
-			
-		//3. Prompt alert - input box 
-			 driver.findElement(By.xpath("//*[@onclick=\"jsPrompt()\"]")).click();
-			 Alert al = driver.switchTo().alert();
-			 al.sendKeys("Welcome");
-			// al.accept();
-			 al.dismiss();
-			 
-			 String text2 =  driver.findElement(By.xpath("//*[@id=\"result\"]")).getText();
-				System.out.println(text2);  //result text that generated on clicking accept/cancel
+		
+		List <WebElement> rows =  driver.findElements(By.xpath("//table[@name=\"BookTable\"]//tr"));	
+		//number of rows in table 
+		int row1 = rows.size();
+		System.out.println("Total rows are :- "+rows.size());
+		/*
+		 * int rows2 = driver.findElements(By.tagName("tr")).size(); //gives from all tables 
+		 * System.out.println(rows2);
+		 */
+		
+		//number of columns 
+		List <WebElement> columns =  driver.findElements(By.xpath("//table[@name=\"BookTable\"]//th"));
+		int co = columns.size();
+		System.out.println("Columns "+columns.size());
+		
+		//by tag name 
+		int col = driver.findElements(By.tagName("th")).size();
+		System.out.println(col);
+		
+		//Read data from web table specific row and column (5th row and 1st column )
+		System.out.println(driver.findElement(By.xpath("//table[@name=\"BookTable\"]//tr[5]//td[1]")).getText());
+		
+		//read all data from table 
+		
+		for(WebElement cos: columns)
+		{
+			System.out.print(cos.getText()+"	");
+		}
+		System.out.println();
+		
+		for(int i=2 ;i<=row1;i++) 
+		{
+			for(int j=1;j<=co;j++)
+			{
+				
+				String value = driver.findElement(By.xpath("//table[@name=\"BookTable\"]//tr["+i+"]//td["+j+"]")).getText();
+				System.out.print(value+"\t");
+			}
+			System.out.println();
+		}
 	}}																					
