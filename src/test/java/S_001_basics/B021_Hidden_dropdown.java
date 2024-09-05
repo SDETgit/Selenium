@@ -42,12 +42,25 @@ public class B021_Hidden_dropdown {
 		 driver.findElement(By.xpath("//*[@placeholder=\"Username\"]")).sendKeys("Admin");
 		 driver.findElement(By.xpath("//*[@name=\"password\"]")).sendKeys("admin123");
 		 driver.findElement(By.xpath("//*[@class=\"oxd-form-actions orangehrm-login-action\"]/button")).click();
-		
+		Thread.sleep(5000);
+		 //pim click
 		 driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a")).click();
 		 System.out.println("Before click ");
-		 	Thread.sleep(10000);
+		 	//Thread.sleep(10000);
 		 //Select hidden elements 
-		 driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[4]/div/div[2]/div/div[1]/div[2]/i")).click();
-		 driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]")).click();
+		// driver.findElement(By.xpath("//*[@class=\"oxd-icon bi-caret-down-fill oxd-select-text--arrow\"]")).click();
+		// driver.findElement(By.xpath("//*[text()= 'Full-Time Permanent']")).click();
 		 System.out.println("after click ");
+		 
+		 driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[6]/div/div[2]/div/div/div[2]/i")).click();
+		 Thread.sleep(4000);
+		 //complete list of options 
+		 List<WebElement> option = driver.findElements(By.xpath("//div[@role='listbox']//div"));
+		 System.out.println("All elements from web page "+option.size());
+		 
+		 //print all options from drop down 
+		 for(WebElement as : option)
+		 {
+			 System.out.println(as.getText());
+		 }
 	}}																					
