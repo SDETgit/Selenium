@@ -33,9 +33,7 @@ public class S001_Webtable {
 	//https://testautomationpractice.blogspot.com/
 
 	public static void main(String[] args) throws InterruptedException {
-		//Alerts 
-		  
-		
+	
 
 		 ChromeDriver driver = new ChromeDriver() ;
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
