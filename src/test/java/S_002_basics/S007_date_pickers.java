@@ -18,47 +18,28 @@ public class S007_date_pickers {
 		String year_ui = driver.findElement(By.xpath("//span[@class=\"ui-datepicker-year\"]")).getText();
 		
 		if(year.equals(year_ui)&&month.equalsIgnoreCase(month_ui))
-		{
-			break;
-		}
+		{			break; 		}
 		//Thread.sleep(500);
 		driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/a[2]")).click();
 		}
 		
 List<WebElement> date_ui = 	driver.findElements(By.xpath("//table[@class=\"ui-datepicker-calendar\"]//tr//td"));
-		
 		for(WebElement da : date_ui)
-		{
-			if(da.getText().equals(date))
-			{
-				da.click();
-			}
-		}
-	}
-	
+		{	if(da.getText().equals(date))
+			{da.click();}}
+	}	
 static void PastDate(WebDriver driver, String month, String year,String date) throws InterruptedException {
-		
 		while(true) {
-		//	Thread.sleep(1000);
+	
 		String month_ui = driver.findElement(By.xpath("//span[@class=\"ui-datepicker-month\"]")).getText();
 		String year_ui = driver.findElement(By.xpath("//span[@class=\"ui-datepicker-year\"]")).getText();
-		
-		if(year.equals(year_ui)&&month.equalsIgnoreCase(month_ui))
-		{
-			break;
-		}
-		//Thread.sleep(500);
+			if(year.equals(year_ui)&&month.equalsIgnoreCase(month_ui))
+		{		break;	}
 		driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/a[1]/span")).click();
 		}
-		
-List<WebElement> date_ui = 	driver.findElements(By.xpath("//table[@class=\"ui-datepicker-calendar\"]//tr//td"));
-		
+		List<WebElement> date_ui = 	driver.findElements(By.xpath("//table[@class=\"ui-datepicker-calendar\"]//tr//td"));
 		for(WebElement da : date_ui)
-		{
-			if(da.getText().equals(date))
-			{
-				da.click();
-			}
+		{	if(da.getText().equals(date))	{	da.click();	}
 		}
 	}
 	
