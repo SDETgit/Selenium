@@ -43,6 +43,8 @@ public class S013_Slider {
           act.dragAndDropBy(max_slider, -100,250).perform();
         System.out.println(  max_slider.getLocation().getX());
        System.out.println(  max_slider.getLocation().getY());
+       System.out.println("Slider location " +slider_p.getLocation()); //Slider location (59, 252) (x , Y )
+       
           
 	}
 }

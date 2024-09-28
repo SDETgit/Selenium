@@ -27,7 +27,7 @@ public class R004_Broken_links {
 		                              continue;
 		               }
 		               try {
-		                              URL urlLink = new URL(url);
+		                              URL urlLink = new URL(url); //converted string to URL format  
 		                              HttpURLConnection huc = (HttpURLConnection) urlLink.openConnection();  //open connection to the server
 		                              huc.setRequestMethod("HEAD");
 		                              huc.connect(); //connect to server and send request

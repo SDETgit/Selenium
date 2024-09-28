@@ -20,27 +20,30 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class S017_Javascritpt_Executor {
+public class S021_Javascritpt_innerHTML {
 	
-	
-
 	public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
+
+		//Minimize 
+		//maximise 
+		//fullscreen 
+		
+		
+		WebDriver driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
       
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        String url = "https://www.tutorialspoint.com/index.htm";
+       
+        driver.get(url);
+        WebElement text = driver.findElement(By.xpath("/html/body/main/section[1]/div/div[2]/h1"));
+        JavascriptExecutor j = (JavascriptExecutor) driver;
+        String s = (String) j.executeScript("return document.body.innerHTML;",text); 
+        j.executeScript("arguments[0].style.border='2px solid red';", text);
+        WebElement learn = driver.findElement(By.xpath("//*[@id=\"mobile-search-strings\"]"));
         
-       driver.get("https://testautomationpractice.blogspot.com/");
-       
-
-       WebElement input = driver.findElement(By.xpath("//*[@id=\"name\"]"));
-       
-       JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].setAttribute('Value','Meka')",input);
-        js.executeScript("arguments[0].value ='Meka23'",input);
-     
-        //To click radio button
-        WebElement radiobutton = driver.findElement(By.xpath("//input[@value=\"male\"]"));
-        js.executeScript("arguments[0].click()", radiobutton) ;
+        j.executeScript("arguments[0].focus();", text);
+        System.out.println("Get HTML of page: "+ s);
+       // driver.quit();
 	}
 }
