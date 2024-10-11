@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="S_010_Data_providers.D002_data_parallel_testing">
+      <class name="S_011_TestNG_Listeners.D001_TestNG_Listeners">
         <methods>
           <include name="setUp"/>
-          <include name="logo"/>
+          <include name="url"/>
+          <include name="title"/>
         </methods>
-      </class> <!-- S_010_Data_providers.D002_data_parallel_testing -->
+      </class> <!-- S_011_TestNG_Listeners.D001_TestNG_Listeners -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

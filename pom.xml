@@ -39,5 +39,32 @@
     <artifactId>javafaker</artifactId>
     <version>1.0.2</version>
 </dependency>
-	 </dependencies>
+   	<dependency>
+   		<groupId>PetStoreAutomation</groupId>
+   		<artifactId>PetStoreAutomation</artifactId>
+   		<version>0.0.1-SNAPSHOT</version>
+   	</dependency>
+   		 
+	 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.1.2</version>
+</dependency>
+
+<dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.6.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-email</artifactId>
+    <version>1.6.0</version>
+</dependency>
+
+   </dependencies>
+
 </project>
