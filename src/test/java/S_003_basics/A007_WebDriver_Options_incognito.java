@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class A006_WebDriver_Options_add_extensions {
+public class A007_WebDriver_Options_incognito {
 	//https://www.demoblaze.com/
 	//https://artoftesting.com/samplesiteforselenium
 	//https://opensource-demo.orangehrmlive.com/web/index.php/auth/login

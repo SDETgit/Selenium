@@ -15,7 +15,7 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class A007_WebDriver_Shadow_doms {
+public class A008_WebDriver_SVG_element {
 	//https://www.demoblaze.com/
 	//https://artoftesting.com/samplesiteforselenium
 	//https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
@@ -36,7 +36,7 @@ public class A007_WebDriver_Shadow_doms {
 		
 		//locating svg element Here we need to use xpath name() to locate them 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[name()='path' and contains(@d,'M 480.469 ')]")).click();
+		driver.findElement(By.xpath("(//*[name()='svg'][@role='presentation'])[3]")).click();
 		 System.out.println("Click has been done ");
 		 
 	}}																					

@@ -19,9 +19,9 @@ public class A002_WebDriver_Options_headless {
 
 	public static void main(String[] args) throws InterruptedException {
 	
-		ChromeOptions option = new ChromeOptions();
-		option.addArguments("--headless=new");
-		 ChromeDriver driver = new ChromeDriver(option) ;
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless=new");
+		ChromeDriver driver = new ChromeDriver(options);
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		 driver.navigate().to("https://www.demoblaze.com/");
 		 driver.manage().window().maximize();

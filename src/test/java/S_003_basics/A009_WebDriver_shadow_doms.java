@@ -15,7 +15,7 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class A008_WebDriver_Svg_Elements {
+public class A009_WebDriver_shadow_doms {
 	//https://www.demoblaze.com/
 	//https://artoftesting.com/samplesiteforselenium
 	//https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
@@ -35,7 +35,7 @@ public class A008_WebDriver_Svg_Elements {
 		//This Element is inside single shadoaw DOM.
 		 String cssSelectorForHost1 = "book-app[apptitle='BOOKS']";
 		 Thread.sleep(1000);
-		 SearchContext shadow = driver.findElement(By.cssSelector("book-app[apptitle='BOOKS']")).getShadowRoot();
+		 SearchContext shadow = driver.findElement(By.cssSelector(cssSelectorForHost1)).getShadowRoot();
 		 Thread.sleep(1000);
 		 shadow.findElement(By.cssSelector("#input")).sendKeys("Millionaire");
 		 
