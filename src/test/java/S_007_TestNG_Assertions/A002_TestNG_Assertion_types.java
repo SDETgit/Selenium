@@ -31,14 +31,14 @@ public void SoftAssertions() {
 	  
 	  System.out.println("After assertion ");
 	  
-	//  Assert.assertEquals(actual, expected);
-	//  Assert.assertNotEquals(actual, expected);
+	  sa.assertEquals(actual, expected);
+	  Assert.assertNotEquals(actual, expected);
 		
-		 //Assert.assertTrue(1==2); 
-		// Assert.assertFalse(1==1); 
-		//Assert.assertNull(actual);
-		// Assert.assertNotNull(expected);
-	//  Assert.fail();
+	sa.assertTrue(1==2); 
+	 sa.assertFalse(1==1); 
+	sa.assertNull(actual);
+	 sa.assertNotNull(expected);
+	//  sa.fail();
 		 sa.assertAll();
   }
 }
