@@ -25,37 +25,49 @@ public class P004_Mouse_Actions {
 		WebElement hover = driver.findElement(By.xpath("//*[@id=\"Attribution1\"]/div[1]/a[1]"));
 	    Actions act = new Actions(driver);  
 	    
-		/*
-		 * Thread.sleep(2000); //hover act.moveToElement(hover).build().perform();
-		 * Thread.sleep(2000); //click WebElement button =
-		 * driver.findElement(By.xpath("//button[@name=\"start\"]"));
-		 * 
-		 * act.moveToElement(button).click().perform(); Thread.sleep(2000); //Double
-		 * click
-		 * 
-		 * WebElement doublecl =
-		 * driver.findElement(By.xpath("//*[@id=\"HTML10\"]/div[1]/button"));
-		 * 
-		 * act.moveToElement(doublecl).doubleClick().perform();
-		 * 
-		 * 
-		 * 
-		 * Thread.sleep(2000); //drag and drop WebElement source =
-		 * driver.findElement(By.xpath("//*[@id=\"draggable\"]/p")); WebElement target =
-		 * driver.findElement(By.xpath("//*[@id=\"droppable\"]"));
-		 * act.dragAndDrop(source, target).perform(); Thread.sleep(2000);
-		 * 
-		 * //right click act.contextClick(source); WebElement rightc =
-		 * driver.findElement(By.xpath("//*[@id=\"HTML11\"]/h2"));
-		 * 
-		 * act.moveToElement(rightc).contextClick().perform();
-		 * 
-		 * // click and hold release driver.switchTo().newWindow(WindowType.TAB);
-		 * driver.get("https://testautomationpractice.blogspot.com/"); WebElement
-		 * source1 = driver.findElement(By.xpath("//*[@id=\"draggable\"]/p"));
-		 * WebElement target1 = driver.findElement(By.xpath("//*[@id=\"droppable\"]"));
-		 * act.clickAndHold(source1).moveToElement(target1).release().build().perform();
-		 */
+		
+		  Thread.sleep(2000); 
+		  
+		  //hover 
+		  act.moveToElement(hover).build().perform();
+		  Thread.sleep(2000); 
+		  
+		  //click 
+		  WebElement button =
+		  driver.findElement(By.xpath("//button[@name=\"start\"]"));
+		  
+		  act.moveToElement(button).click().perform(); Thread.sleep(2000); 
+		  //Double 		  click
+		  
+		  WebElement doublecl =
+		  driver.findElement(By.xpath("//*[@id=\"HTML10\"]/div[1]/button"));
+		  
+		  act.moveToElement(doublecl).doubleClick().perform();
+		  
+		  
+		  
+		  Thread.sleep(2000);
+		  
+		  //drag and drop
+		  WebElement source =
+		  driver.findElement(By.xpath("//*[@id=\"draggable\"]/p")); WebElement target =
+		  driver.findElement(By.xpath("//*[@id=\"droppable\"]"));
+		  act.dragAndDrop(source, target).perform(); Thread.sleep(2000);
+		  
+		  //right click 
+		  act.contextClick(source); 
+		  WebElement rightc =
+		  driver.findElement(By.xpath("//*[@id=\"HTML11\"]/h2"));
+		  
+		  act.moveToElement(rightc).contextClick().perform();
+		  
+		  // click and hold release 
+		  driver.switchTo().newWindow(WindowType.TAB);
+		  driver.get("https://testautomationpractice.blogspot.com/"); WebElement
+		  source1 = driver.findElement(By.xpath("//*[@id=\"draggable\"]/p"));
+		  WebElement target1 = driver.findElement(By.xpath("//*[@id=\"droppable\"]"));
+		  act.clickAndHold(source1).moveToElement(target1).release().build().perform();
+		 
 	    //Slider 
 	    driver.switchTo().newWindow(WindowType.TAB);
 	    driver.get("https://www.jqueryscript.net/demo/Price-Range-Slider-jQuery-UI/");
