@@ -35,5 +35,6 @@ public class P005_keyboard_actions {
 		sendKeys("A").sendKeys("C").keyUp(Keys.CONTROL).
 		moveToElement(text2).click().keyDown(Keys.CONTROL).sendKeys("V").keyUp(Keys.CONTROL).perform();
 	}
+	
 
 }
